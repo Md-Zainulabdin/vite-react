@@ -1,22 +1,16 @@
-import logo from './assets/images/logo.svg';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="app">
-      <header className="app-header">
-        <img src={logo} className="app-logo" alt="logo" />
-        <p className="header">Vite React Starter 💯</p>
-        <p>
-          Vite + React <br />
-          ESLint + Prettier + Stylelint
-          <br />
-          Sass + Emotion + Tailwind
-          <br />
-          Jest + Testing Library
-        </p>
-      </header>
-    </div>
-  );
-}
+import Home from './pages/home';
+import SignIn from './pages/sign-in';
+import SignUp from './pages/sign-up';
+
+const App = () => (
+  <Routes>
+      <Route path="/" element={<Home />}/>
+      <Route path="/sign-in" element={<SignIn />}/>
+      <Route path="/sign-up" element={<SignUp />}/>
+    </Routes>
+);
 
 export default App;
